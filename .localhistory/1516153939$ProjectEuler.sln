@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplesOf3And5", "ProjectEuler\MultiplesOf3And5.csproj", "{88AE8215-E36C-4692-8028-B7A371717487}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.MultiplesOf3And5", "1.MultiplesOf3And5", "{9D45CE43-A116-41AA-9F59-83854A0C7585}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler", "ProjectEuler\ProjectEuler.csproj", "{88AE8215-E36C-4692-8028-B7A371717487}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +18,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{88AE8215-E36C-4692-8028-B7A371717487} = {9D45CE43-A116-41AA-9F59-83854A0C7585}
 	EndGlobalSection
 EndGlobal
