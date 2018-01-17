@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplesOf3And5", "ProjectEuler\MultiplesOf3And5.csproj", "{88AE8215-E36C-4692-8028-B7A371717487}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.MultiplesOf3And5", "1.MultiplesOf3And5", "{9D45CE43-A116-41AA-9F59-83854A0C7585}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.EvenFibonacciNumbers", "2.EvenFibonacciNumbers", "{9C4D5368-4613-471D-AC1B-9AA737A8A2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenFibonacciNumbers", "EvenFibonacciNumbers\EvenFibonacciNumbers.csproj", "{97E60B1E-F3CE-4ED8-A899-1F7726F2E06F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.LargestPrimeFactor", "3.LargestPrimeFactor", "{27C66725-228F-45A4-9FCA-64D303B809BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestPrimeFactor", "LargestPrimeFactor\LargestPrimeFactor.csproj", "{3010415A-4974-4C06-B6F5-4E466F969E50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.LargestPalindromeProduct", "4.LargestPalindromeProduct", "{03037502-F11D-414B-8C60-3BBE92C30082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestPalindromeProduct", "LargestPalindromeProduct\LargestPalindromeProduct.csproj", "{759E6DDB-A696-4993-B993-29EFDA617384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88AE8215-E36C-4692-8028-B7A371717487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88AE8215-E36C-4692-8028-B7A371717487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88AE8215-E36C-4692-8028-B7A371717487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88AE8215-E36C-4692-8028-B7A371717487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E60B1E-F3CE-4ED8-A899-1F7726F2E06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E60B1E-F3CE-4ED8-A899-1F7726F2E06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E60B1E-F3CE-4ED8-A899-1F7726F2E06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E60B1E-F3CE-4ED8-A899-1F7726F2E06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3010415A-4974-4C06-B6F5-4E466F969E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3010415A-4974-4C06-B6F5-4E466F969E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3010415A-4974-4C06-B6F5-4E466F969E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3010415A-4974-4C06-B6F5-4E466F969E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{759E6DDB-A696-4993-B993-29EFDA617384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{759E6DDB-A696-4993-B993-29EFDA617384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{759E6DDB-A696-4993-B993-29EFDA617384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{759E6DDB-A696-4993-B993-29EFDA617384}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88AE8215-E36C-4692-8028-B7A371717487} = {9D45CE43-A116-41AA-9F59-83854A0C7585}
+		{97E60B1E-F3CE-4ED8-A899-1F7726F2E06F} = {9C4D5368-4613-471D-AC1B-9AA737A8A2BA}
+		{3010415A-4974-4C06-B6F5-4E466F969E50} = {27C66725-228F-45A4-9FCA-64D303B809BC}
+		{759E6DDB-A696-4993-B993-29EFDA617384} = {03037502-F11D-414B-8C60-3BBE92C30082}
+	EndGlobalSection
+EndGlobal
