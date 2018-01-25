@@ -119,7 +119,7 @@ namespace LargeSum
         {
             List<BigInteger> bigInt = InitBigNumber();
             string result = FirstTenDigit(bigInt);
-            Console.WriteLine(result);
+            Console.WriteLine("The first ten digit of the sum is: " + result);
             Console.ReadKey();
 
         }
