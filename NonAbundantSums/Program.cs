@@ -1,9 +1,6 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NonAbundantSums
 {
@@ -26,30 +23,32 @@ namespace NonAbundantSums
          * Find the sum of all the positive integers which cannot be written as 
          * the sum of two abundant numbers.
          */
-        const int UPPER_BOUND = 28123;
+        const int UpperBound = 28123;
 
         static void Main(string[] args)
         {
             int sum = AllSumOfAbundantNumber();
-            Console.WriteLine(sum);
+
+            Console.WriteLine("The sum of all the positive integers which cannot be written as he sum of two abundant numbers is " + sum);
+
             Console.ReadKey();
         }
 
         static int AllSumOfAbundantNumber()
         {
-            int sum = (UPPER_BOUND + 25) * (UPPER_BOUND - 25 + 1) / 2;
+            int sum = (UpperBound + 25) * (UpperBound - 25 + 1) / 2;
             List<int> abundant = new List<int>();
-            for (int i = 12; i <= UPPER_BOUND; i++)
+            for (int i = 12; i <= UpperBound; i++)
                 if (IsAbundantNumber(i))
                     abundant.Add(i);
-            int[] sumOf2Abundant = Enumerable.Range(1, UPPER_BOUND+1).ToArray();
+            int[] sumOf2Abundant = Enumerable.Range(1, UpperBound + 1).ToArray();
             for (int i = 0; i < abundant.Count; i++)
-            for (int j = 0; j < abundant.Count; j++)
-            {
-                int tmp = abundant[i] + abundant[j];
-                if(tmp <= UPPER_BOUND)
+                for (int j = 0; j < abundant.Count; j++)
+                {
+                    int tmp = abundant[i] + abundant[j];
+                    if (tmp <= UpperBound)
                         sumOf2Abundant[tmp] = 0;
-            }
+                }
             foreach (var i in sumOf2Abundant)
             {
                 sum -= i;
@@ -61,7 +60,7 @@ namespace NonAbundantSums
         static List<int> InitAbundantNumber()
         {
             List<int> list = new List<int>();
-            for (int i = 12; i <= UPPER_BOUND; i++)
+            for (int i = 12; i <= UpperBound; i++)
                 if (IsAbundantNumber(i))
                     list.Add(i);
             list.Sort();

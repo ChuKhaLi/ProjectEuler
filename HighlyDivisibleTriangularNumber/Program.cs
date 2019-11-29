@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HighlyDivisibleTriangularNumber
 {
@@ -26,21 +23,16 @@ namespace HighlyDivisibleTriangularNumber
          */
         static void Main(string[] args)
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             int i = 1, triangle = 0;
             do
             {
-                int divisors;
                 triangle = TriangleNumbers(i);
-                divisors = NumberOfDivisors(triangle);
+                var divisors = NumberOfDivisors(triangle);
                 if (divisors > 500) break;
                 i++;
             } while (true);
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            Console.WriteLine("The first triangle number to have over "+
+            Console.WriteLine("The first triangle number to have over " +
                 "five hundred divisors: " + triangle);
-            Console.WriteLine("Took: " + elapsedMs + " ms to complete");
             Console.ReadLine();
         }
 
@@ -59,50 +51,50 @@ namespace HighlyDivisibleTriangularNumber
         static int NumberOfDivisors(int number)
         {
             int count = 1;
-            List<int> powerOfPrimeFactor = new List<int>();
             int temp = 0;
-            while (number % 2 == 0)
-            {
-                temp++;
-                number = number / 2;
-            }
-            powerOfPrimeFactor.Add(temp);
 
-            temp = 0;
-            while (number % 3 == 0)
+            var powerOfPrimeFactor = new List<int>();
+
+            var firstTwoPrimes = new List<int> { 2, 3 };
+            foreach (var prime in firstTwoPrimes)
             {
-                temp++;
-                number = number / 3;
+                while (number % prime == 0)
+                {
+                    temp++;
+                    number /= prime;
+                }
+                powerOfPrimeFactor.Add(temp);
+                temp = 0;
             }
-            powerOfPrimeFactor.Add(temp);
 
             // all prime numbers bigger than 5 can be written as
             // p = (6*k+1) or p = (6*k-1)
-            double sqrt_n = Math.Sqrt(number);
-            for (int i = 5; i <= sqrt_n; i = i + 6)
+            double sqrtN = Math.Sqrt(number);
+            for (int i = 5; i <= sqrtN; i = i + 6)
             {
-                temp = 0;
-                while (number % i == 0)
+                var primes = new List<int> { i, i + 2 };
+                foreach (var prime in primes)
                 {
-                    temp++;
-                    number = number / i;
+                    while (number % prime == 0)
+                    {
+                        temp++;
+                        number /= prime;
+                    }
+                    powerOfPrimeFactor.Add(temp);
+                    temp = 0;
                 }
-                powerOfPrimeFactor.Add(temp);
-
-                temp = 0;
-                while (number % (i + 2) == 0)
-                {
-                    temp++;
-                    number = number / (i + 2);
-                }
-                powerOfPrimeFactor.Add(temp);
             }
 
             if (number > 2)
+            {
                 powerOfPrimeFactor.Add(1);
+            }
 
             foreach (var power in powerOfPrimeFactor)
+            {
                 count *= (power + 1);
+            }
+
             return count;
         }
     }

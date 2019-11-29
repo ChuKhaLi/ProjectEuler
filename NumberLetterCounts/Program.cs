@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NumberLetterCounts
 {
@@ -19,15 +15,12 @@ namespace NumberLetterCounts
          * 115 (one hundred and fifteen) contains 20 letters. The use of "and" 
          * when writing out numbers is in compliance with British usage.
          */
-        private static readonly int[] SMALLER_THAN_TWENTY =
-            {0,3,3,5,4,4,3,5,5,4,3,6,6,8,8,7,7,9,8,8,6};
+        private static readonly int[] SmallerThanTwenty = { 0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8, 6 };
+        private static readonly int[] Tens = { 0, 3, 6, 6, 5, 5, 5, 7, 6, 6 };
+        private static readonly int Hundreds = 7;
+        private static readonly int BiggerThanHundreds = 10;
+        private static readonly int OneThousand = 11;
 
-        private static readonly int[] TENS =
-            { 0, 3, 6, 6, 5, 5, 5, 7, 6, 6};
-
-        private static readonly int HUNDREDS = 7;
-        private static readonly int BIGGER_THAN_HUNDREDS = 10;
-        private static readonly int ONE_THOUSAND = 11;
         static void Main(string[] args)
         {
             int sum = 0;
@@ -43,7 +36,7 @@ namespace NumberLetterCounts
             if (number < 100)
                 return ReadTwoDigit(number);
             if (number == 1000)
-                return ONE_THOUSAND;
+                return OneThousand;
             return ReadThreeDigit(number);
         }
 
@@ -51,11 +44,11 @@ namespace NumberLetterCounts
         {
             int sum = 0;
             if (number <= 20)
-                sum += SMALLER_THAN_TWENTY[number];
+                sum += SmallerThanTwenty[number];
             else
             {
-                sum += SMALLER_THAN_TWENTY[number % 10];
-                sum += TENS[number / 10];
+                sum += SmallerThanTwenty[number % 10];
+                sum += Tens[number / 10];
             }
             return sum;
         }
@@ -63,10 +56,10 @@ namespace NumberLetterCounts
         static int ReadThreeDigit(int number)
         {
             int sum = 0;
-            sum += SMALLER_THAN_TWENTY[number / 100];
+            sum += SmallerThanTwenty[number / 100];
             if (number % 100 == 0)
-                return sum + HUNDREDS;
-            sum += BIGGER_THAN_HUNDREDS;
+                return sum + Hundreds;
+            sum += BiggerThanHundreds;
             sum += ReadTwoDigit(number % 100);
             return sum;
         }

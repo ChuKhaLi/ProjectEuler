@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _10001stPrime
 {
@@ -37,8 +33,8 @@ namespace _10001stPrime
             if (n % 2 == 0 || n % 3 == 0 || n < 2) return false;
             if (n < 9) return true;
             int i;
-            double sqrt_n = Math.Sqrt(n) + 1;
-            for (i = 5; i <= sqrt_n; i = i + 6)
+            double sqrtN = Math.Sqrt(n) + 1;
+            for (i = 5; i <= sqrtN; i += 6)
             {
                 if (n % i == 0 || n % (i + 2) == 0) return false;
             }

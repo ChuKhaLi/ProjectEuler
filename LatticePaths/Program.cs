@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Numerics;
 
 namespace LatticePaths
 {
@@ -27,8 +22,8 @@ namespace LatticePaths
         {
             if (n <= 0 | k <= 0 | k > n) return 0;
             if (k > n - k) { k = n - k; }
-            ulong  result = 1;
-            for (int i = 1; i <=k; i++)
+            ulong result = 1;
+            for (int i = 1; i <= k; i++)
             {
                 result *= Convert.ToUInt64(n--);
                 result /= Convert.ToUInt64(i);

@@ -13,12 +13,11 @@ namespace DigitFactorials
          */
         static void Main(string[] args)
         {
-            int[] factors = new int[] 
-            { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880 };
+            int[] factors = new[] { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880 };
             int sum = 0;
 
             // upperBound = UpperBound(); -> precalculate this
-            int upperBound = 2540160; 
+            int upperBound = 2540160;
             for (int i = 10; i <= upperBound; i++)
             {
                 int tmpSum = i, j = i;

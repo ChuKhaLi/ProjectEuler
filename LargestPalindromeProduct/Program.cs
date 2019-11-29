@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LargestPalindromeProduct
 {
@@ -17,11 +14,11 @@ namespace LargestPalindromeProduct
          */
         static void Main(string[] args)
         {
-            // just brute force it
+            // just bruce force it
             int max = 0;
-            for(int i = 999; i >= 100; i--) 
-                for(int j = 999; j >= i; j--)
-                    if ((i * j > max) & Ispalindromic(i * j))
+            for (int i = 999; i >= 100; i--)
+                for (int j = 999; j >= i; j--)
+                    if ((i * j > max) & IsPalindromic(i * j))
                         max = i * j;
             Console.WriteLine(
                 "The largest palindrome made from the product of two 3-digit numbers is: " +
@@ -29,13 +26,9 @@ namespace LargestPalindromeProduct
             Console.ReadKey();
         }
 
-        static bool Ispalindromic(int x)
+        static bool IsPalindromic(int x)
         {
-            string s = x + "";
-            char[] charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            string reverse = new string(charArray);
-            return s.Equals(reverse);
+            return x + "" == string.Concat((x + "").Reverse());
         }
     }
 }

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DistinctPowers
 {
@@ -24,11 +22,11 @@ namespace DistinctPowers
         static void Main(string[] args)
         {
             List<BigInteger> bigInt = new List<BigInteger>();
-            for(int a = 2; a<= 100; a++)
-            for (int b = 2; b <= 100; b++)
-            {
-                bigInt.Add(BigInteger.Pow(a, b));
-            }
+            for (int a = 2; a <= 100; a++)
+                for (int b = 2; b <= 100; b++)
+                {
+                    bigInt.Add(BigInteger.Pow(a, b));
+                }
             bigInt = bigInt.Distinct().ToList();
             Console.WriteLine(bigInt.Count);
             Console.ReadKey();

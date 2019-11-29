@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LargestProductInASeries
 {
@@ -70,7 +65,7 @@ namespace LargestProductInASeries
                     max0 = max;
                 }
             }
-            Console.WriteLine("The result is: "+max0);
+            Console.WriteLine("The result is: " + max0);
             Console.ReadKey();
         }
 
@@ -79,7 +74,7 @@ namespace LargestProductInASeries
             long result = 1;
             foreach (char c in s)
             {
-                result *= (long)(c - '0');
+                result *= c - '0';
                 if (result == 0) return 0;
             }
             return result;

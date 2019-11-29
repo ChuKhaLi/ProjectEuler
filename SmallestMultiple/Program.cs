@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SmallestMultiple
 {
@@ -29,7 +25,7 @@ namespace SmallestMultiple
              * s = 2^4*3^2*5*7*11*13*17*19
              */
             double s = Math.Pow(2, 4) * Math.Pow(3, 2) * 5 * 7 * 11 * 13 * 17 * 19;
-            Console.WriteLine("the smallest positive number that is evenly divisible by "+
+            Console.WriteLine("the smallest positive number that is evenly divisible by " +
                 "all of the numbers from 1 to 20 is: " + s);
             Console.ReadKey();
         }

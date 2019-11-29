@@ -39,7 +39,7 @@ namespace _1000DigitFibonacciNumber
                 f0 = f1 - f0;
                 count++;
             }
-            Console.WriteLine("the index of the first term in "+
+            Console.WriteLine("the index of the first term in " +
                 "the Fibonacci sequence to contain 1000 digits is: " + count);
             Console.ReadKey();
         }

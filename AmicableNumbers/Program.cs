@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AmicableNumbers
 {
@@ -24,68 +20,78 @@ namespace AmicableNumbers
         static void Main(string[] args)
         {
             int sum = 0;
+
             for (int i = 2; i < 10000; i++)
             {
-                int j;
-                j = SumOfProperDivisors(i);
-                if (j > i)
+                int j = SumOfProperDivisors(i);
+                if (j <= i)
                 {
-                    if (SumOfProperDivisors(j) == i)
-                        sum = sum + i + j;
+                    continue;
+                }
+
+                if (SumOfProperDivisors(j) == i)
+                {
+                    sum = sum + i + j;
                 }
             }
-            Console.WriteLine("The sum of all the amicable numbers under 10000 is: "
-                +sum);
+
+            Console.WriteLine("The sum of all the amicable numbers under 10000 is: " + sum);
+
             Console.ReadKey();
         }
 
+        // Get formula from here https://math.stackexchange.com/questions/22721/is-there-a-formula-to-calculate-the-sum-of-all-proper-divisors-of-a-number
         static int SumOfProperDivisors(int number)
         {
-
             int c = number, sum = 1;
             int temp = 0;
-            while (number % 2 == 0)
-            {
-                temp++;
-                number = number / 2;
-            }
-            if (temp > 0)
-                sum *= (int)Math.Pow(2, temp + 1) - 1;
 
-            temp = 0;
-            while (number % 3 == 0)
+            var firstTwoPrimes = new List<int> { 2, 3 };
+
+            foreach (var prime in firstTwoPrimes)
             {
-                temp++;
-                number = number / 3;
+                while (number % prime == 0)
+                {
+                    temp++;
+                    number /= prime;
+                }
+
+                if (temp > 0)
+                {
+                    sum *= (int)(Math.Pow(prime, temp + 1) - 1) / (prime - 1);
+                }
+
+                temp = 0;
             }
-            if (temp > 0)
-                sum *= (int)(Math.Pow(3, temp + 1) - 1) / 2;
+
             // all prime numbers bigger than 5 can be written as
             // p = (6*k+1) or p = (6*k-1)
-            double sqrt_n = Math.Sqrt(number);
-            for (int i = 5; i <= sqrt_n; i = i + 6)
+            double sqrtN = Math.Sqrt(number);
+            for (int i = 5; i <= sqrtN; i = i + 6)
             {
-                temp = 0;
-                while (number % i == 0)
-                {
-                    temp++;
-                    number = number / i;
-                }
-                if (temp > 0)
-                    sum *= (int)(Math.Pow(i, temp + 1) - 1) / (i - 1);
+                var primes = new List<int> { i, i + 2 };
 
-                temp = 0;
-                while (number % (i + 2) == 0)
+                foreach (var prime in primes)
                 {
-                    temp++;
-                    number = number / (i + 2);
+                    while (number % prime == 0)
+                    {
+                        temp++;
+                        number /= prime;
+                    }
+
+                    if (temp > 0)
+                    {
+                        sum *= (int)(Math.Pow(prime, temp + 1) - 1) / (prime - 1);
+                    }
+
+                    temp = 0;
                 }
-                if (temp > 0)
-                    sum *= (int)(Math.Pow((i + 2), temp + 1) - 1) / (i + 1);
             }
 
             if (number > 2)
+            {
                 sum *= (int)(Math.Pow(number, 2) - 1) / (number - 1);
+            }
 
             return sum - c;
         }

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NamesScores
 {
@@ -29,7 +26,7 @@ namespace NamesScores
         {
             string filename = "p022_names.txt";
             List<string> names = ReadName(filename);
-            Console.WriteLine("The total of all the name scores in the file " 
+            Console.WriteLine("The total of all the name scores in the file "
                 + filename + " is: " + Score(names));
             Console.ReadKey();
 

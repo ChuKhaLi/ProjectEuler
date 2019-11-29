@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LexicographicPermutations
 {
@@ -25,8 +22,8 @@ namespace LexicographicPermutations
             string s = "0123456789";
             List<string> permuttions = GetPermuttion(s);
             Console.WriteLine("the millionth lexicographic permutation of" +
-                "the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 is: " + 
-                permuttions[1000000-1]);
+                "the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 is: " +
+                permuttions[1000000 - 1]);
             Console.ReadKey();
 
         }

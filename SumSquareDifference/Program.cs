@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SumSquareDifference
 {
@@ -22,7 +18,7 @@ namespace SumSquareDifference
         static void Main(string[] args)
         {
             /*
-             * Mathematic way:
+             * Mathematics way:
              * The sum of the squares of the first n natural numbers is
              * 1^2 + 2^2 + ... + n^2 = n*(n+1)*(2n+1)/6
              * The square of the sum of the first n natural numbers is,
@@ -37,8 +33,8 @@ namespace SumSquareDifference
                 sum += i;
             }
             int result = sum * sum - sumSquare;
-            Console.WriteLine("the difference between the sum of the squares of "+
-                "the first one hundred natural numbers and the square of the sum is: "+
+            Console.WriteLine("the difference between the sum of the squares of " +
+                "the first one hundred natural numbers and the square of the sum is: " +
                 result);
             Console.ReadKey();
         }

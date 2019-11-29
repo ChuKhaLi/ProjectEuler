@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoubleBasePalindromes
 {
@@ -22,23 +18,25 @@ namespace DoubleBasePalindromes
             int sum = 0;
             for (int i = 1; i < 1000000; i++)
             {
-                if (Ispalindromic(i))
+                if (IsPalindromic(i))
                     sum += i;
             }
             Console.WriteLine("The sum is: " + sum);
             Console.ReadKey();
         }
 
-        static bool Ispalindromic(int number)
+        static bool IsPalindromic(int number)
         {
             string baseTen = number + "";
-            if (!baseTen.Equals(
-                new string(baseTen.ToCharArray().Reverse().ToArray())))
+
+            if (!baseTen.Equals(string.Concat(baseTen.Reverse())))
                 return false;
+
             string binary = Convert.ToString(number, 2);
-            if (!binary.Equals(
-                new string(binary.ToCharArray().Reverse().ToArray())))
+
+            if (!binary.Equals(string.Concat(binary.Reverse())))
                 return false;
+
             return true;
         }
     }

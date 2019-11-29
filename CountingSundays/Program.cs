@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CountingSundays
 {
@@ -40,7 +35,7 @@ namespace CountingSundays
             int count = 0;
             for (int i = 1; i <= 12; i++)
             {
-                DateTime date = new DateTime(year, i, 1);
+                var date = new DateTime(year, i, 1);
                 if (date.DayOfWeek == DayOfWeek.Sunday) count++;
             }
             return count;

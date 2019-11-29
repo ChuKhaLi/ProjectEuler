@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuadraticPrimes
 {
@@ -29,24 +25,24 @@ namespace QuadraticPrimes
          */
         static void Main(string[] args)
         {
-            int nMax = 0, aMax =0, bMax=0;
-            for(int a = -999;a<1000;a++)
-            for (int b = -1000; b <= 1000; b++)
-            {
-                int n = 0;
-                while (IsPrime(n * n + a * n + b))
+            int nMax = 0, aMax = 0, bMax = 0;
+            for (int a = -999; a < 1000; a++)
+                for (int b = -1000; b <= 1000; b++)
                 {
-                    n++;
+                    int n = 0;
+                    while (IsPrime(n * n + a * n + b))
+                    {
+                        n++;
+                    }
+                    if (n > nMax)
+                    {
+                        nMax = n;
+                        aMax = a;
+                        bMax = b;
+                    }
                 }
-                if (n > nMax)
-                {
-                    nMax = n;
-                    aMax = a;
-                    bMax = b;
-                }
-            }
 
-            Console.WriteLine(aMax*bMax);
+            Console.WriteLine(aMax * bMax);
             Console.ReadKey();
         }
 
