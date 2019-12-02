@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace IntegerRightTriangle
@@ -13,28 +14,45 @@ namespace IntegerRightTriangle
          */
         static void Main(string[] args)
         {
-            var perimeters = Enumerable.Range(0, 1000).ToArray();
+            var solutions = Enumerable.Range(1, 1000).Select(FindSolution).ToArray();
 
-            for (int i = 999; i > 0; i--)
+            var maxSolution = solutions.Max();
+            var perimeter = Array.IndexOf(solutions, maxSolution);
+
+            Console.WriteLine($"With perimeter = {perimeter} we get max {maxSolution} solutions");
+
+            //var tests = new List<int> {12, 120};
+            //foreach (var test in tests)
+            //{
+            //    Console.WriteLine(FindSolution(test));
+            //}
+
+            Console.ReadKey();
+        }
+
+        static int FindSolution(int perimeter)
+        {
+            var count = 0;
+
+            for (int i = perimeter; i > 0; i--)
             {
-                for (int j = 1000 - i; j > 0; j--)
+                for (int j = perimeter - i; j > 0; j--)
                 {
-                    for (int k = 1000 - i - j; k > 0; k--)
+                    for (int k = perimeter - i - j; k > 0; k--)
                     {
-                        if (i * i == j * j + k * k && i + j + k <= 1000)
+                        if (i + j + k == perimeter && 
+                            (i * i == j * j + k * k || j * j == i * i + k * k || k * k == i * i + j * j))
                         {
-                            perimeters[i + j + k - 1]++;
-                            Console.WriteLine(i + " " + j + " " + k + " " + perimeters[i + j + k - 1]);
+                            Console.WriteLine(perimeter + ": " + i + " " + j + " " + k);
+                            count++;
                         }
                     }
                 }
             }
 
-            var maxSolution = perimeters.Max();
-            var perimeter = Array.IndexOf(perimeters, maxSolution);
+            Console.WriteLine($"Found {count} solutions for {perimeter}");
 
-            Console.WriteLine($"With perimeter = {perimeter} we get max {maxSolution} solutions");
-            Console.ReadKey();
+            return count;
         }
     }
 }
